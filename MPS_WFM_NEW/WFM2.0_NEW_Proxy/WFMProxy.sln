@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFMProxy", "WFMProxy\WFMProxy.csproj", "{7CDA13A4-EBD6-4225-A341-86B92F5D514E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A526DE47-6F2C-4A7F-BD2A-79F2137C079A}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonDomainLibrary", "CommonDomain-master\src\CommonDomainLibrary\CommonDomainLibrary.csproj", "{EE50DDD3-C475-44A5-A93B-2E2E71A1A0F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edit", "Edit\Edit.csproj", "{7328156F-F56E-4970-B50F-AC61920F171B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "ConaxWorkflowManager\Core\Core.csproj", "{0A972176-EAFA-405B-B244-31F0E8F3DF7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{3A8A5E74-AFCE-4EA4-8030-8A033599BAD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CDA13A4-EBD6-4225-A341-86B92F5D514E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CDA13A4-EBD6-4225-A341-86B92F5D514E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CDA13A4-EBD6-4225-A341-86B92F5D514E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7CDA13A4-EBD6-4225-A341-86B92F5D514E}.Debug|x86.Build.0 = Debug|Any CPU
+		{7CDA13A4-EBD6-4225-A341-86B92F5D514E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CDA13A4-EBD6-4225-A341-86B92F5D514E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CDA13A4-EBD6-4225-A341-86B92F5D514E}.Release|x86.ActiveCfg = Release|Any CPU
+		{EE50DDD3-C475-44A5-A93B-2E2E71A1A0F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE50DDD3-C475-44A5-A93B-2E2E71A1A0F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE50DDD3-C475-44A5-A93B-2E2E71A1A0F9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EE50DDD3-C475-44A5-A93B-2E2E71A1A0F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE50DDD3-C475-44A5-A93B-2E2E71A1A0F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE50DDD3-C475-44A5-A93B-2E2E71A1A0F9}.Release|x86.ActiveCfg = Release|Any CPU
+		{7328156F-F56E-4970-B50F-AC61920F171B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7328156F-F56E-4970-B50F-AC61920F171B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7328156F-F56E-4970-B50F-AC61920F171B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7328156F-F56E-4970-B50F-AC61920F171B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7328156F-F56E-4970-B50F-AC61920F171B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7328156F-F56E-4970-B50F-AC61920F171B}.Release|x86.ActiveCfg = Release|Any CPU
+		{0A972176-EAFA-405B-B244-31F0E8F3DF7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A972176-EAFA-405B-B244-31F0E8F3DF7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A972176-EAFA-405B-B244-31F0E8F3DF7D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0A972176-EAFA-405B-B244-31F0E8F3DF7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A972176-EAFA-405B-B244-31F0E8F3DF7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A972176-EAFA-405B-B244-31F0E8F3DF7D}.Release|x86.ActiveCfg = Release|Any CPU
+		{3A8A5E74-AFCE-4EA4-8030-8A033599BAD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A8A5E74-AFCE-4EA4-8030-8A033599BAD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A8A5E74-AFCE-4EA4-8030-8A033599BAD6}.Debug|x86.ActiveCfg = Debug|x86
+		{3A8A5E74-AFCE-4EA4-8030-8A033599BAD6}.Debug|x86.Build.0 = Debug|x86
+		{3A8A5E74-AFCE-4EA4-8030-8A033599BAD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A8A5E74-AFCE-4EA4-8030-8A033599BAD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A8A5E74-AFCE-4EA4-8030-8A033599BAD6}.Release|x86.ActiveCfg = Release|x86
+		{3A8A5E74-AFCE-4EA4-8030-8A033599BAD6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

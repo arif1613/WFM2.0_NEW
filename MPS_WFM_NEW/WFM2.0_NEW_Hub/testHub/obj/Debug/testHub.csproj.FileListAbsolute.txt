@@ -1,0 +1,5 @@
+C:\Conax_Final\MpsWfmHub\testHub\bin\Debug\testHub.exe.config
+C:\Conax_Final\MpsWfmHub\testHub\bin\Debug\testHub.exe
+C:\Conax_Final\MpsWfmHub\testHub\bin\Debug\testHub.pdb
+C:\Conax_Final\MpsWfmHub\testHub\obj\Debug\testHub.exe
+C:\Conax_Final\MpsWfmHub\testHub\obj\Debug\testHub.pdb

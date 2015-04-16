@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<ivy-module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+  <info organisation="MPS" module="MPP.Auxiliary.ConaxWorkflowManager"/>
+  <publications>
+    <artifact name="MPS.MPP.Auxiliary.ConaxWorkflowManager.Core" type="dll"/>
+    <artifact name="MPS.MPP.Auxiliary.ConaxWorkflowManager.Core" type="pdb"/>
+    <artifact name="MPS.MPP.Auxiliary.ConaxWorkflowManager.Application" type="mpkg"/>
+  </publications>
+  <dependencies>
+	<dependency org="Apache" name="Log4Net" rev="1.2+"/>
+	<dependency org="SQLite" name="SQLite" rev="1.0.84.+"/>
+	<dependency org="MediaArea.net" name="MediaInfo" rev="0.7+"/>
+	<dependency org="Microsoft" name="Excel" rev="11.0+"/>
+	<dependency org="MSpec" name="MSpec" rev="0.5.15"/>
+	<dependency org="Moq" name="Moq" rev="4.1.1308"/>
+	<dependency org="MPS" name="MPP.Auxiliary.Core" rev="latest.integration"/>
+  </dependencies>
+</ivy-module>

@@ -1,0 +1,2 @@
+nant retrieve
+pause

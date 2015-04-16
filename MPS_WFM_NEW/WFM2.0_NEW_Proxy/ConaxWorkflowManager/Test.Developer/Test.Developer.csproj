@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08F089FE-2F26-4D6F-AF5F-610CBA71A5DE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MPS.MPP.Auxiliary.ConaxWorkflowManager.Test.Developer</RootNamespace>
+    <AssemblyName>MPS.MPP.Auxiliary.ConaxWorkflowManager.Test.Developer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\Dependencies\MSpec\MSpec\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\Dependencies\MSpec\MSpec\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\Dependencies\Moq\Moq\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Core\Catchup\CodeShopSmoothCatchupHandlerTest\With_A_New_CodeShopSmoothCatchupHandler.cs" />
+    <Compile Include="Core\Communication\CubiTVMiddlewareServiceWrapperTest\With_a_new_CubiServiceWrapper.cs" />
+    <Compile Include="Core\Task\GenerateNPVR\With_a_new_GenerateNPVRTask.cs" />
+    <Compile Include="Core\Task\PurgeNPVR\With_a_new_PurgeNPVRTask.cs" />
+    <Compile Include="Core\TestData\Services\Cubi\FakeCubiTVMWServiceWrapperWithError.cs" />
+    <Compile Include="Core\TestData\Services\Cubi\FakeCubiTVMWServiceWrapper.cs" />
+    <Compile Include="Core\TestData\Services\Cubi\FakeMiddleWareRestApiCaller.cs" />
+    <Compile Include="Core\TestData\Services\Harmonic\FakeHarmonicOriginWrapper.cs" />
+    <Compile Include="Core\TestData\Services\MPP\FakeMPPService.cs" />
+    <Compile Include="Core\TestData\Services\Unified\FakeUnifiedServicesWrapper.cs" />
+    <Compile Include="Core\TestData\Services\WFM\FAKEDBWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{0A972176-EAFA-405B-B244-31F0E8F3DF7D}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Core\TestData\ConaxWorkflowManagerConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Core\TestData\EPGChannelConfig.xml" />
+    <Content Include="Core\TestData\Services\Cubi\Data\npvr_recordings_1.xml" />
+    <Content Include="Core\TestData\Services\Cubi\Data\npvr_recordings_2.xml" />
+    <Content Include="Core\TestData\Services\Cubi\Data\package_offers_1010.xml" />
+    <Content Include="Core\TestData\Services\Cubi\Data\services_.xml" />
+    <Content Include="Core\TestData\Services\MPP\Data\channel_content_621.xml" />
+    <Content Include="Core\TestData\Services\MPP\Data\epg_content_624.xml" />
+    <Content Include="Core\TestData\Services\MPP\Data\epg_content_624_archived.xml" />
+    <Content Include="Core\TestData\Services\MPP\Data\content_agreement_Live_Multi2.xml" />
+    <Content Include="Core\TestData\Services\MPP\Data\epg_content_624_With_future_date.xml" />
+    <Content Include="Core\TestData\Services\MPP\Data\mppuser.xml" />
+    <Content Include="Core\TestData\Services\MPP\Data\service_2.xml" />
+    <Content Include="Core\TestData\Services\MPP\Data\service_41.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

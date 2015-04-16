@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ivysettings>
+  <settings defaultResolver="retrieve" validate="false" />
+  <resolvers>
+    <chain name="publish" returnFirst="true">
+      <filesystem name="publish-local">
+        <ivy pattern="${ivy.default.ivy.user.dir}\[organisation]\[branch]\[module]\[revision]\ivy.xml" />
+        <artifact pattern="${ivy.default.ivy.user.dir}\[organisation]\[branch]\[module]\[revision]\[artifact].[ext]" />
+      </filesystem>
+    </chain>
+    <chain name="retrieve">	  
+	  <filesystem name="retrieve-1" latest="latest-time">
+		<ivy pattern="${ivy.default.ivy.user.dir}\[organisation]\[branch]\[module]\[revision]\ivy.xml" />
+		<artifact pattern="${ivy.default.ivy.user.dir}\[organisation]\[branch]\[module]\[revision]\[artifact].[ext]" />
+	  </filesystem>
+	  <sftp name="retrieve-2" user="read" userPassword="read" host="mpp-binaries.dyndns.org" latest="latest-time">
+		<ivy pattern="[organisation]/[branch]/[module]/[revision]/ivy.xml"/>
+		<artifact pattern="[organisation]/[branch]/[module]/[revision]/[artifact].[ext]"/>
+	  </sftp>
+    </chain>
+  </resolvers>
+  <modules>
+    <module organisation="MPS" name=".*" branch="${branch.name}" />
+  </modules>
+</ivysettings>

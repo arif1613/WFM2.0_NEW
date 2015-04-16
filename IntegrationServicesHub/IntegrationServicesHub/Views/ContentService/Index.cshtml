@@ -1,0 +1,86 @@
+﻿@model System.Collections.Generic.IEnumerable<IntegrationServicesHub.Models.Util.ValueObjects.ContentData>
+
+@{
+    ViewBag.Title = "Content List";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateNewContent")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ObjectID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HostID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExternalID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventPeriodFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventPeriodTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Created)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductionYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RunningTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TemporaryUnavailable)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ObjectID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HostID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExternalID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventPeriodFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventPeriodTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Created)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductionYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RunningTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TemporaryUnavailable)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

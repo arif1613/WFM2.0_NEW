@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "MpsWfmHub", "MpsWfmHub\MpsWfmHub.ccproj", "{BD65D418-017E-44EB-B801-6DA09150DED1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WfmHubWorker", "WfmHubWorker\WfmHubWorker.csproj", "{B328E020-4D3A-41FD-AFA1-D2C927413503}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonDomainLibrary", "CommonDomain-master\src\CommonDomainLibrary\CommonDomainLibrary.csproj", "{EE50DDD3-C475-44A5-A93B-2E2E71A1A0F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessMpsListenerMsg", "ProcessMpsListenerMsg\ProcessMpsListenerMsg.csproj", "{9C3DC62B-CDA6-407F-BB24-94C38953FB52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateEpgMsg", "CreateEpgMsg\CreateEpgMsg.csproj", "{E51ABB45-74A8-41C9-A92D-03C96AB1E60A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ECBF7B50-FDD1-477A-9CED-CF83A2E95331}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edit", "Edit\Edit.csproj", "{7328156F-F56E-4970-B50F-AC61920F171B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD65D418-017E-44EB-B801-6DA09150DED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD65D418-017E-44EB-B801-6DA09150DED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD65D418-017E-44EB-B801-6DA09150DED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD65D418-017E-44EB-B801-6DA09150DED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B328E020-4D3A-41FD-AFA1-D2C927413503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B328E020-4D3A-41FD-AFA1-D2C927413503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B328E020-4D3A-41FD-AFA1-D2C927413503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B328E020-4D3A-41FD-AFA1-D2C927413503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE50DDD3-C475-44A5-A93B-2E2E71A1A0F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE50DDD3-C475-44A5-A93B-2E2E71A1A0F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE50DDD3-C475-44A5-A93B-2E2E71A1A0F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE50DDD3-C475-44A5-A93B-2E2E71A1A0F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C3DC62B-CDA6-407F-BB24-94C38953FB52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C3DC62B-CDA6-407F-BB24-94C38953FB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C3DC62B-CDA6-407F-BB24-94C38953FB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C3DC62B-CDA6-407F-BB24-94C38953FB52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E51ABB45-74A8-41C9-A92D-03C96AB1E60A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E51ABB45-74A8-41C9-A92D-03C96AB1E60A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E51ABB45-74A8-41C9-A92D-03C96AB1E60A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E51ABB45-74A8-41C9-A92D-03C96AB1E60A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7328156F-F56E-4970-B50F-AC61920F171B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7328156F-F56E-4970-B50F-AC61920F171B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7328156F-F56E-4970-B50F-AC61920F171B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7328156F-F56E-4970-B50F-AC61920F171B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

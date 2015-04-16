@@ -1,0 +1,11 @@
+C:\MPS\Work\xtend_1.1.2.3\Modules\Auxiliary\ConaxWorkflowManager\Console\bin\Debug\MediaInfo.dll
+C:\MPS\Work\xtend_1.1.2.3\Modules\Auxiliary\ConaxWorkflowManager\Console\bin\Debug\MPS.MPP.Auxiliary.ConaxWorkflowManager.Console.exe.config
+C:\MPS\Work\xtend_1.1.2.3\Modules\Auxiliary\ConaxWorkflowManager\Console\bin\Debug\MPS.MPP.Auxiliary.ConaxWorkflowManager.Console.exe
+C:\MPS\Work\xtend_1.1.2.3\Modules\Auxiliary\ConaxWorkflowManager\Console\bin\Debug\MPS.MPP.Auxiliary.ConaxWorkflowManager.Console.pdb
+C:\MPS\Work\xtend_1.1.2.3\Modules\Auxiliary\ConaxWorkflowManager\Console\bin\Debug\MPS.MPP.Auxiliary.ConaxWorkflowManager.Core.dll
+C:\MPS\Work\xtend_1.1.2.3\Modules\Auxiliary\ConaxWorkflowManager\Console\bin\Debug\log4net.dll
+C:\MPS\Work\xtend_1.1.2.3\Modules\Auxiliary\ConaxWorkflowManager\Console\bin\Debug\System.Data.SQLite.dll
+C:\MPS\Work\xtend_1.1.2.3\Modules\Auxiliary\ConaxWorkflowManager\Console\bin\Debug\MPS.MPP.Auxiliary.ConaxWorkflowManager.Core.pdb
+C:\MPS\Work\xtend_1.1.2.3\Modules\Auxiliary\ConaxWorkflowManager\Console\obj\x86\Debug\Console.csprojResolveAssemblyReference.cache
+C:\MPS\Work\xtend_1.1.2.3\Modules\Auxiliary\ConaxWorkflowManager\Console\obj\x86\Debug\MPS.MPP.Auxiliary.ConaxWorkflowManager.Console.exe
+C:\MPS\Work\xtend_1.1.2.3\Modules\Auxiliary\ConaxWorkflowManager\Console\obj\x86\Debug\MPS.MPP.Auxiliary.ConaxWorkflowManager.Console.pdb

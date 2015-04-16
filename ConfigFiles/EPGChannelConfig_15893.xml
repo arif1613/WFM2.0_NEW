@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EPGChannelConfig>
+  <Feeds>
+    <!--Feed uri="\\wfmshare.lab.conax.com\mps_lab\mppgw06\feed\xmltv_file.xml" feedTimezone="UTC" /-->
+	<Feed uri="http://mpsqa.com/epg/xmltv_file.xml" feedTimezone="UTC" />
+	
+  </Feeds>
+  <Channels>
+  
+	
+	<Channel mppContentId="1055" epgChannelId="13005">
+      <ConfigurationForServices>
+        <!--One-->
+        <Service serviceObjectId="633113601">
+          <Source>
+            <ForDevices>
+              <Device>STB</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+         <Source>
+            <ForDevices>
+              <Device>PC</Device>
+              <Device>MAC</Device>
+              <Device>iPad</Device>
+              <Device>AndroidTablet</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+          <Source>
+            <ForDevices>
+              <Device>iPhone</Device>
+              <Device>AndroidMobile</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+        </Service>
+        <!--Two-->
+        <Service serviceObjectId="633123841">
+          <Source>
+            <ForDevices>
+              <Device>STB</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+          <Source>
+            <ForDevices>
+              <Device>PC</Device>
+              <Device>MAC</Device>
+              <Device>iPad</Device>
+              <Device>AndroidTablet</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+          <Source>
+            <ForDevices>
+              <Device>iPhone</Device>
+              <Device>AndroidMobile</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+        </Service>
+		
+      </ConfigurationForServices>
+    </Channel>
+	
+	<Channel mppContentId="1056" epgChannelId="19994">
+      <ConfigurationForServices>
+        <!--One-->
+        <Service serviceObjectId="633113601">
+          <Source>
+            <ForDevices>
+              <Device>STB</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+         <Source>
+            <ForDevices>
+              <Device>PC</Device>
+              <Device>MAC</Device>
+              <Device>iPad</Device>
+              <Device>AndroidTablet</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+          <Source>
+            <ForDevices>
+              <Device>iPhone</Device>
+              <Device>AndroidMobile</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+        </Service>
+        <!--Two-->
+        <Service serviceObjectId="633123841">
+          <Source>
+            <ForDevices>
+              <Device>STB</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+          <Source>
+            <ForDevices>
+              <Device>PC</Device>
+              <Device>MAC</Device>
+              <Device>iPad</Device>
+              <Device>AndroidTablet</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+          <Source>
+            <ForDevices>
+              <Device>iPhone</Device>
+              <Device>AndroidMobile</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+        </Service>
+		
+      </ConfigurationForServices>
+    </Channel>
+	
+	<Channel mppContentId="827" epgChannelId="382">
+      <ConfigurationForServices>
+        <!--One-->
+        <Service serviceObjectId="633113601">
+          <Source>
+            <ForDevices>
+              <Device>STB</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+         <Source>
+            <ForDevices>
+              <Device>PC</Device>
+              <Device>MAC</Device>
+              <Device>iPad</Device>
+              <Device>AndroidTablet</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+          <Source>
+            <ForDevices>
+              <Device>iPhone</Device>
+              <Device>AndroidMobile</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+        </Service>
+        <!--Two-->
+        <Service serviceObjectId="633123841">
+          <Source>
+            <ForDevices>
+              <Device>STB</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+          <Source>
+            <ForDevices>
+              <Device>PC</Device>
+              <Device>MAC</Device>
+              <Device>iPad</Device>
+              <Device>AndroidTablet</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+          <Source>
+            <ForDevices>
+              <Device>iPhone</Device>
+              <Device>AndroidMobile</Device>
+            </ForDevices>
+             <NPVRWebRoot>http://storage01.lab.conax.com/content/npvr</NPVRWebRoot>
+            <Stream>http://origin01.lab.conax.com/live/tv2/tv2.isml/Manifest</Stream>
+          </Source>
+        </Service>
+		
+      </ConfigurationForServices>
+    </Channel>
+ 																		
+  </Channels>
+</EPGChannelConfig>

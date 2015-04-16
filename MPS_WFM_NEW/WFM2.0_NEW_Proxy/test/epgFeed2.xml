@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tv generator-info-name="nonametv">
+  <programme id="1503111" start="20150311010000 +0100" stop="20150311013000 +0100" channel="thhasepg2">
+    <title lang="nb">thhasepg2 - programme 15031101</title>
+    <sub-title lang="nb">thhasepg2 - programme 15031101</sub-title>
+    <desc lang="nb">Barnabys trofaste assistent, Gavin Troy, får litt å tenke på når han blir forfremmet, samtidig som Barnaby etterforsker et mistenkelig funn.</desc>
+    <credits>
+      <actor>John Nettles</actor>
+      <actor>Daniel Casey</actor>
+      <actor>Jane Wymark</actor>
+      <actor>Laura Howard</actor>
+    </credits>
+    <recordable>1</recordable>
+    <rating system="MPAA">
+      <value>X</value>
+    </rating>
+    <rating system="VCHIP">
+      <value></value>
+    </rating>
+    <custom-xml>
+      <anothertag>asdfasdfasd</anothertag>
+    </custom-xml>
+  </programme>
+</tv>

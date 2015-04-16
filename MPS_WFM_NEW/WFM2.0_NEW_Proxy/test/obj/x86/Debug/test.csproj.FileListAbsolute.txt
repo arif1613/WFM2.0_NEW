@@ -1,0 +1,17 @@
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\test.exe.config
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\MediaInfo.dll
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\test.exe
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\test.pdb
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\MPS.MPP.Auxiliary.ConaxWorkflowManager.Core.dll
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\WFMProxy.dll
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\log4net.dll
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\Microsoft.ServiceBus.dll
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\NodaTime.dll
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\MPS.MPP.Auxiliary.ConaxWorkflowManager.Core.pdb
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\WFMProxy.pdb
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\log4net.xml
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\Microsoft.ServiceBus.xml
+C:\SVN\Modules\Auxiliary\WFMProxy\test\bin\x86\Debug\NodaTime.xml
+C:\SVN\Modules\Auxiliary\WFMProxy\test\obj\x86\Debug\test.csprojResolveAssemblyReference.cache
+C:\SVN\Modules\Auxiliary\WFMProxy\test\obj\x86\Debug\test.exe
+C:\SVN\Modules\Auxiliary\WFMProxy\test\obj\x86\Debug\test.pdb

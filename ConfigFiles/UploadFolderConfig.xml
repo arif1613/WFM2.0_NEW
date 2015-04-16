@@ -1,0 +1,8 @@
+﻿<UploadFolderConfig>
+  <ContentRightsOwner name="HBO">
+    <UploadFolders>
+      <UploadFolder>C:\Xtend2.0\Ingest\Upload\upload2</UploadFolder>
+      <UploadFolder>C:\Xtend2.0\Ingest\Upload\upload(channel)</UploadFolder>
+    </UploadFolders>
+  </ContentRightsOwner>
+</UploadFolderConfig>

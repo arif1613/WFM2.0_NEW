@@ -1,0 +1,2 @@
+C:\Conax_Final\MpsWfmHub\MpsWfmHub\bin\Release\ServiceConfiguration.cscfg
+C:\Conax_Final\MpsWfmHub\MpsWfmHub\bin\Release\ServiceDefinition.csdef

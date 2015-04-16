@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<project xmlns="http://nant.sf.net/nightly/2008-02-10-0.86/nant.xsd" name="MPPComponent" default="build" basedir=".." >
+
+  <property name="flash.executable" value="Flash.exe" unless="${property::exists('flash.executable')}"/>
+
+  <xmlpeek file="ivy.xml" xpath="/ivy-module/info/@organisation" property="organization" failonerror="true"/>
+  <xmlpeek file="ivy.xml" xpath="/ivy-module/info/@module" property="module" failonerror="true"/>
+
+  <target name="init-external" >
+    <echo message="Searching for external buildfile ${module}.build" />
+    
+	<property name="external.build.tmp" value="${module}.build" failonerror="true" />
+    <if test="${file::exists(external.build.tmp)}" >
+      <property name="external.build" value="${external.build.tmp}" failonerror="true" />
+      <nant buildfile="${external.build}" target="init" />
+    </if>
+  </target>
+
+  <target name="init-version-external" depends="init-external" if="${property::exists('external.build')}" >
+    <nant buildfile="${external.build}" target="init-version" />
+  </target>
+
+  <target name="prepare-external" depends="init-external" if="${property::exists('external.build')}" >
+    <nant buildfile="${external.build}" target="prepare" />
+  </target>
+
+  <target name="compile-external" depends="init-external" if="${property::exists('external.build')}" >
+    <nant buildfile="${external.build}" target="compile" />
+  </target>
+
+  <target name="package-external" depends="init-external" if="${property::exists('external.build')}" >
+    <nant buildfile="${external.build}" target="package" />
+  </target>
+
+  <target name="finalize-external" depends="init-external" if="${property::exists('external.build')}" >
+    <nant buildfile="${external.build}" target="finalize" />
+  </target>
+
+  <target name="clean-external" depends="init-external" if="${property::exists('external.build')}" >
+    <nant buildfile="${external.build}" target="clean" />
+  </target>
+
+  <target name="init" depends="init-version, init-external" description="initializes the build">
+    <loadfile file="..\..\..\branch-name.txt" property="branch.name" />
+    <echo message="Using '${branch.name}' for the branch.name property" />
+	
+    <property name="ivy.status" value="integration" unless="${property::exists('ivy.status')}"/>
+    <echo message="Using '${ivy.status}' for the ivy.status property" />
+
+    <property name="configuration" value="Debug" unless="${property::exists('configuration')}"/>
+    <echo message="Using '${configuration}' for the configuration property" />
+
+    <property name="build.version" value="${version.majorminor}.${build.number}-i${version.revision}" unless="${property::exists('build.version')}"/>
+    <echo message="Using '${build.version}' for the build.version property" />
+    <echo file="${build.current}/version.txt" message="${organization}-${module}-${build.version}" />
+
+    <property name="ivy.resolver" value="retrieve" unless="${property::exists('ivy.resolver')}"/>
+    <echo message="Using '${ivy.resolver}' for the ivy.resolver property" />
+  </target>
+
+  <target name="init-home" if="${environment::variable-exists('MPS_HOME')}">
+    <property name="home" value="${environment::get-variable('MPS_HOME')}" />
+  </target>
+
+   <target name="init-hudson" if="${environment::variable-exists('BUILD_NUMBER')}" description="Init the build for the Hudson continuous integration">
+	<property name="build.number" value="${environment::get-variable('BUILD_NUMBER')}" failonerror="true" />
+	<property name="version.revision" value="0" failonerror="true" />
+  </target>  
+
+  <target name="init-workspace" depends="init-home, init-hudson" description="initializes work folders for the build">
+    <if test="${not property::exists('home')}">
+      <fail message="Set the enironment variable MPS_HOME" />
+    </if>
+
+    <property name="build" value="${project::get-base-directory()}/Build" />
+    <property name="build.current" value="${build}" />
+  </target>
+
+  <target name="solution-info" description="initializes the Assembly information" depends="init-version">
+    <property name="configuration" value="Debug" unless="${property::exists('configuration')}"/>
+
+    <asminfo output="SolutionInfo.cs" language="CSharp">
+      <imports>
+        <import namespace="System" />
+        <import namespace="System.Reflection" />
+      </imports>
+      <attributes>
+        <attribute type="AssemblyVersionAttribute" value="${assembly.version}" />
+        <attribute type="AssemblyTitleAttribute" value="${organization}.${module}" />
+        <attribute type="AssemblyCopyrightAttribute" value="Copyright (c) ${datetime::get-year(datetime::now())}, MPS Broadband AB." />
+        <attribute type="AssemblyConfigurationAttribute" value="${configuration}"/>
+        <attribute type="AssemblyCompanyAttribute" value="MPS Broadband"/>
+        <attribute type="AssemblyProductAttribute" value="${organization}.${module}" />
+        <attribute type="AssemblyTrademarkAttribute" value="${organization}.${module}" />
+        <attribute type="AssemblyDescriptionAttribute" value="${organization}.${module}" />
+      </attributes>
+    </asminfo>
+  </target>
+
+  <target name="init-current-build-dir" depends="init-workspace">
+    <mkdir dir="${build.current}" />
+  </target>
+
+  <target name="init-version" description="initializes the version number" depends="init-current-build-dir, init-version-external">
+    <loadfile file="..\..\..\module-version.txt" property="version.majorminor" />
+    <echo message="Using '${version.majorminor}' for the version.majorminor property" />
+  
+    <echo message="Could not deduce the the revision version number, defaulting to 0. Are you running in an offline mode?" unless="${property::exists('version.revision')}"/>
+    <property name="version.revision" value="0" unless="${property::exists('version.revision')}" />
+    <echo message="Using revision number: ${version.revision}"/>
+
+    <echo message="Could not deduce the the build version number, defaulting to 0.  The build  number is only available when building inside Hudson - are you building manually?" unless="${property::exists('build.number')}"/>
+    <property name="build.number" value="0" unless="${property::exists('build.number')}" />
+    <echo message="Using build number: ${build.number}" />
+
+    <echo message="Version property has already been defined elsewhere" if="${property::exists('assembly.version')}" />
+    <property name="assembly.version" value="${version.majorminor}.${build.number}" unless="${property::exists('assembly.version')}"/>
+    <echo message="Version property is: ${assembly.version}" />
+  </target>
+
+  <target name="retrieve" depends="init, solution-info">
+    <property name="bin" value="${build.current}"/>
+    <property name="dependencies" value="Dependencies" />
+
+    <delete>
+      <fileset basedir="${dependencies}">
+        <include name="**" />
+      </fileset>
+    </delete>
+    <mkdir dir="${dependencies}" />
+
+	<if test="${file::exists('build.args')}">
+		<iniread filename="build.args" section="args" key="retrieve" property="args" default="0" />
+	</if>
+	
+	<if test="${not property::exists('args') or property::get-value('args') == '0'}">
+	    <property name="args" value="-retrieve Dependencies/[organisation]/[module]/[artifact].[ext]" />
+	</if>
+	
+    <call target="execute-ivy" cascade="false"/>
+  </target>
+
+  <target name="execute-ivy" depends="init">
+	<fail unless="${property::exists('args')}" message="The 'args' property must be set when calling the execute-ivy target" />
+
+    <echo message="Ivy argument: '${args}'" />
+
+    <property name="commandline" value="-Dbranch.name=${branch.name} -classpath ${home}\Tools\apache-ivy\lib\jsch-0.1.31.jar;${home}\Tools\apache-ivy\ivy.jar org.apache.ivy.Main -settings BuildTool/ivysettings.xml -ivy ivy.xml -novalidate" />
+    <exec program="java" commandline="${commandline} ${args}" failonerror="true">
+    </exec>
+  </target>
+
+  <target name="clean" depends="init-workspace, clean-external" description="cleans the current build">
+    <echo message="Deleting ${build.current}" />
+    <delete>
+      <fileset basedir="${build.current}" >
+        <include name="**" />
+      </fileset>
+    </delete>
+  </target>
+
+  <target name="compile" depends="init, retrieve, compile-external" description="compiles the source">
+    <echo message="Setting binary folder to ${bin}" />
+    <mkdir dir="${bin}" />
+    <property name="solutionfile" value="${module}.sln" />
+
+	<if test="${not file::exists(solutionfile)}">
+		<echo message="Could not find the solution file '${solutionfile}' which is required for compilation" />
+	</if>
+    
+	<if test="${file::exists(solutionfile)}">
+	    <exec program="C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" commandline='/t:Rebuild /property:OutputPath=${bin} /verbosity:d' verbose="true" failonerror="true" />
+	</if>
+  </target>
+
+  <target name="package-application" depends="compile, prepare-external" if="${file::exists('Meta/' + organization + '.' + module + '.Application.xml')}">
+    <property name="app.name" value="${organization}.${module}.Application" />
+    <property name="app.path" value="${build.current}/${app.name}" />
+    <property name="app.payload" value="${app.path}.zip" />
+    <mpkg-make package="${app.path}" zipfile="${app.payload}" version="${build.version}" manifest="Meta/${app.name}.xml" path="Meta/${app.name};${bin}">
+      <fileset basedir="${bin}">
+        <include name="**/*" />
+        <exclude name="${app.payload}" />
+		<exclude name="version.txt" />		
+        <exclude name="*.mpkg" />
+        <exclude name="_PublishedWebsites/**" />
+        <exclude name="**/nunit*" />
+      </fileset>
+    </mpkg-make>
+  </target>
+
+  <target name="package-webapplication" depends="compile, prepare-external" if="${directory::exists(bin + '/_PublishedWebsites')}">
+    <property name="websites" value="${bin}/_PublishedWebsites" />
+    <foreach item="Folder" in="${websites}"  property="path">
+      <do>
+        <property name="website" value="${string::substring(path,string::get-length(websites)+1,string::get-length(path)-string::get-length(websites)-1)}" />
+        <echo message="Website: '${website}'" />
+
+        <property name="webapp.name" value="${organization}.${module}.${website}" />
+        <echo message=" Webapp: '${webapp.name}'" />
+
+        <property name="webapp.path" value="${build.current}/${webapp.name}" />
+        <property name="webapp.payload" value="${webapp.path}.zip" />
+
+        <property name="flashfolder" value="Flash" />
+        <if test="${directory::exists(flashfolder)}" >
+          <echo message="Found Flash-folder to compile, this might take a while" />
+       
+		  <delete>
+            <fileset basedir="${flashfolder}/bin">
+              <include name="**" />
+            </fileset>
+          </delete>
+          
+		  <exec program="${flash.executable}" workingdir="${flashfolder}" commandline='buildAllSwfFiles.jsfl' failonerror="true" />
+
+          <foreach item="Folder" in="${flashfolder}/bin" property="flashPath" failonerror="true">
+            <do>
+              <echo message="Copying flash: '${flashPath}' to '${path}'" />
+              <property name="flashver" value="${path::get-file-name(flashPath)}" />
+
+              <copy todir="${path}" >
+                <fileset basedir="${flashPath}">
+                  <include name="*" />
+                </fileset>
+              </copy>
+            </do>
+          </foreach>
+        </if>
+
+		<if test="${file::exists('Meta/' + webapp.name + '.xml')}" >
+			<mpkg-make package="${webapp.path}" zipfile="${webapp.payload}" version="${build.version}" manifest="Meta/${webapp.name}.xml" path="Meta/${webapp.name};${path};${bin}" comment="The ${website} webapp of the ${organization}.${module}-${build.version} module">
+			  <fileset basedir="${path}">
+				<include name="**/*" />
+				<exclude name="mychannel/otherformats/**" />
+				<exclude name="mychannel/ServiceViewData/**" />
+			  </fileset>
+			</mpkg-make>
+		</if>
+      </do>
+    </foreach>
+  </target>
+
+  <target name="package" depends="clean, prepare-external, package-application, package-webapplication">
+    <fail unless="${property::exists('build.version')}" message="The 'build.version' property has not been set, please call one of the integration|milestone|final targets first!" />
+  </target>
+
+  <target name="build" depends="package, package-external" description="Builds all artifacts">
+  </target>
+
+  <target name="zip" depends="build, finalize-external">
+  </target>
+
+  <target name="integration" description="Publish a continous integration build" depends="clean, init-version">
+  </target>
+
+  <target name="milestone" description="Publish a milestone build" depends="clean, init-version">
+    <property name="ivy.status" value="milestone" />
+    <property name="configuration" value="Debug" />
+    <property name="build.version" value="${version.majorminor}.${build.number}-m${version.revision}" />	
+    <property name="ivy.resolver" value="publish" />
+  </target>
+
+  <target name="final" description="Prepare for a final release" depends="clean, init-version">
+    <property name="ivy.status" value="final" />
+    <property name="configuration" value="Debug" />
+    <property name="build.version" value="${version.majorminor}-final" />
+    <property name="ivy.resolver" value="publish" />
+  </target>
+  
+  <target name="release" depends="zip" description="Make a release by calling one of the integration|milestone|release targets before this target">
+    <fail unless="${property::exists('ivy.status') and (ivy.status=='integration' or ivy.status=='milestone' or ivy.status=='final')}"  message="The build.version has not been set, please call the integration|milestone|release target before releasing" />
+    <fail unless="${property::exists('build.version')}" message="The build.version has not been set, please fix the build script!" />
+    <fail unless="${property::exists('ivy.resolver')}"  message="The ivy.resolver has not been set, please fix the build script!" />
+
+    <property name="args" value="-publish ${ivy.resolver} -publishpattern Build/[artifact].[ext] -revision ${build.version} -status ${ivy.status}" />
+    <call target="execute-ivy" cascade="false"/>
+  </target>
+</project>

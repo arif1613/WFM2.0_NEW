@@ -1,0 +1,86 @@
+﻿@model System.Collections.Generic.IEnumerable<IntegrationServicesHub.Models.HubModels.ServiceProvidersModel>
+
+@{
+    ViewBag.Title = "Service Providers";
+}
+
+<ul class="nav navbar-nav">
+    <li>@Html.ActionLink("Service Providers List", "Index", "ServiceProviders")</li>
+    <li>@Html.ActionLink("Content Agreements List", "Index", "ContentAgreements")</li>
+    <li>@Html.ActionLink("Content Rights Owners List", "Index", "ContentsRightsOwner")</li>
+    <li>@Html.ActionLink("Multiple Content Services List", "Index", "Home")</li>
+    <li>@Html.ActionLink("Multiple Service Prices List", "Index", "Home")</li>
+    <li>@Html.ActionLink("Create New", "Create")</li>
+</ul>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceProviderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ObjectId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EncryptedName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublishState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceProviderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ObjectId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EncryptedName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublishState)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
